@@ -21,14 +21,18 @@ public class AutorServicio {
 
 
     @Transactional
-    public void crearAutor(String nombre) throws MiException{
-        
+    public Autor crearAutor(String nombre) throws MiException{ 
         validar(nombre);
-        
         Autor autor = new Autor();
         autor.setNombre(nombre);
-
         autorRepositorio.save(autor);
+        return autor;
+    }
+
+    @Transactional
+    public Autor crearAutorEntidad(Autor autor) { 
+        autorRepositorio.save(autor);
+        return autor;
     }
     
     @Transactional(readOnly = true)

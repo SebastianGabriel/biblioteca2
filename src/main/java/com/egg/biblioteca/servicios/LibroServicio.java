@@ -32,7 +32,6 @@ public class LibroServicio {
     public void crearLibro(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
 
         validar(isbn, titulo, ejemplares, idAutor, idEditorial);
-
         Autor autor = autorRepositorio.findById(idAutor).get();
         Editorial editorial = editorialRepositorio.findById(idEditorial).get();
 

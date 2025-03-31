@@ -17,6 +17,11 @@ public class Autor {
     private UUID id;
 
     private String nombre;
+    
+    @Override
+    public String toString() {
+        return "Autor [id=" + id + ", nombre=" + nombre + "]";
+    }
 
     public Autor() {
     }
@@ -37,11 +42,5 @@ public class Autor {
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return "Autor [id=" + id + ", nombre=" + nombre + "]";
-    }
-
-    
-
+  
 }
